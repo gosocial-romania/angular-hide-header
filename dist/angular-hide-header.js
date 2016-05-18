@@ -20,7 +20,6 @@
 						}
 						else{
 					  		element.addClass('hideh');
-							console.log(hheight);
 							element.css({
 								'top':-hheight+"px",
 								'transition':'top 0.25s',
@@ -40,7 +39,6 @@
 					}
 					scroll_time = $timeout(function(){
 						scrollposition = body[0].scrollTop;
-						console.log(scrollposition);
 					},60);
 				});
 			}
