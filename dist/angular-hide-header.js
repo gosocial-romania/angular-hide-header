@@ -39,7 +39,7 @@
 					}
 					scroll_time = $timeout(function(){
 						scrollposition = body[0].scrollTop;
-					},60);
+					},0);
 				});
 			}
 		}		
