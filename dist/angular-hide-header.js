@@ -6,6 +6,7 @@
 		  	link: function (scope, element, attrs) {
 				var scrollposition = 0,scroll_time;
 				var hideOffset = attrs.hideOffset;
+                var fixedMenu = angular.element(document.querySelector('#sf-fixed-left-menu'));
 				angular.element($window).bind("scroll", function() {
 					var body = angular.element(document.getElementsByTagName('body'));
 					var current_scroll = body[0].scrollTop;
@@ -16,7 +17,7 @@
 						if (current_scroll <= scrollposition) {
 					 		element.removeClass('hideh');
 							element.css({'top':"80px"});
-							angular.element('#sf-fixed-left-menu').css({'top': "164px"});
+							fixedMenu.css({'top': "164px"});
 						}
 						else{
 					  		element.addClass('hideh');
@@ -28,14 +29,14 @@
 								'-ms-transition': 'top 0.25s',
 								'-o-transition': 'top 0.25s',
 							});
-							angular.element('#sf-fixed-left-menu').css({'top': "84px"});
+							fixedMenu.css({'top': "84px"});
 						}
 					}
 					else if(current_scroll >= hheight){
 						element.removeClass('hideh');
 						element.css({
 							'top':"80px"});
-						angular.element('#sf-fixed-left-menu').css({'top': "164px"});
+						fixedMenu.css({'top': "164px"});
 					}
 					scroll_time = $timeout(function(){
 						scrollposition = body[0].scrollTop;
